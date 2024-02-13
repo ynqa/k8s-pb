@@ -409,8 +409,8 @@ pub struct StorageClass {
     /// parameters holds the parameters for the provisioner that should
     /// create volumes of this storage class.
     /// +optional
-    #[prost(map = "string, string", tag = "3")]
-    pub parameters: ::std::collections::HashMap<
+    #[prost(btree_map = "string, string", tag = "3")]
+    pub parameters: ::prost::alloc::collections::BTreeMap<
         ::prost::alloc::string::String,
         ::prost::alloc::string::String,
     >,
@@ -569,8 +569,8 @@ pub struct VolumeAttachmentStatus {
     /// This field must only be set by the entity completing the attach
     /// operation, i.e. the external-attacher.
     /// +optional
-    #[prost(map = "string, string", tag = "2")]
-    pub attachment_metadata: ::std::collections::HashMap<
+    #[prost(btree_map = "string, string", tag = "2")]
+    pub attachment_metadata: ::prost::alloc::collections::BTreeMap<
         ::prost::alloc::string::String,
         ::prost::alloc::string::String,
     >,

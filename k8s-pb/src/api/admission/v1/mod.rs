@@ -133,8 +133,8 @@ pub struct AdmissionResponse {
     /// admission webhook name (e.g. imagepolicy.example.com/error=image-blacklisted). AuditAnnotations will be provided by
     /// the admission webhook to add additional context to the audit log for this request.
     /// +optional
-    #[prost(map = "string, string", tag = "6")]
-    pub audit_annotations: ::std::collections::HashMap<
+    #[prost(btree_map = "string, string", tag = "6")]
+    pub audit_annotations: ::prost::alloc::collections::BTreeMap<
         ::prost::alloc::string::String,
         ::prost::alloc::string::String,
     >,

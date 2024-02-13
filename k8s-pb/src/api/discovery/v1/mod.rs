@@ -34,8 +34,8 @@ pub struct Endpoint {
     /// write to it will be silently ignored. Topology information can be found
     /// in the zone and nodeName fields instead.
     /// +optional
-    #[prost(map = "string, string", tag = "5")]
-    pub deprecated_topology: ::std::collections::HashMap<
+    #[prost(btree_map = "string, string", tag = "5")]
+    pub deprecated_topology: ::prost::alloc::collections::BTreeMap<
         ::prost::alloc::string::String,
         ::prost::alloc::string::String,
     >,

@@ -179,8 +179,8 @@ pub struct CsiPersistentVolumeSource {
     pub fs_type: ::core::option::Option<::prost::alloc::string::String>,
     /// volumeAttributes of the volume to publish.
     /// +optional
-    #[prost(map = "string, string", tag = "5")]
-    pub volume_attributes: ::std::collections::HashMap<
+    #[prost(btree_map = "string, string", tag = "5")]
+    pub volume_attributes: ::prost::alloc::collections::BTreeMap<
         ::prost::alloc::string::String,
         ::prost::alloc::string::String,
     >,
@@ -247,8 +247,8 @@ pub struct CsiVolumeSource {
     /// volumeAttributes stores driver-specific properties that are passed to the CSI
     /// driver. Consult your driver's documentation for supported values.
     /// +optional
-    #[prost(map = "string, string", tag = "4")]
-    pub volume_attributes: ::std::collections::HashMap<
+    #[prost(btree_map = "string, string", tag = "4")]
+    pub volume_attributes: ::prost::alloc::collections::BTreeMap<
         ::prost::alloc::string::String,
         ::prost::alloc::string::String,
     >,
@@ -563,8 +563,8 @@ pub struct ConfigMap {
     /// The keys stored in Data must not overlap with the keys in
     /// the BinaryData field, this is enforced during validation process.
     /// +optional
-    #[prost(map = "string, string", tag = "2")]
-    pub data: ::std::collections::HashMap<
+    #[prost(btree_map = "string, string", tag = "2")]
+    pub data: ::prost::alloc::collections::BTreeMap<
         ::prost::alloc::string::String,
         ::prost::alloc::string::String,
     >,
@@ -576,8 +576,8 @@ pub struct ConfigMap {
     /// Using this field will require 1.10+ apiserver and
     /// kubelet.
     /// +optional
-    #[prost(map = "string, bytes", tag = "3")]
-    pub binary_data: ::std::collections::HashMap<
+    #[prost(btree_map = "string, bytes", tag = "3")]
+    pub binary_data: ::prost::alloc::collections::BTreeMap<
         ::prost::alloc::string::String,
         ::prost::alloc::vec::Vec<u8>,
     >,
@@ -1131,8 +1131,8 @@ pub struct ContainerStatus {
     /// and after successfully admitting desired pod resize.
     /// +featureGate=InPlacePodVerticalScaling
     /// +optional
-    #[prost(map = "string, message", tag = "10")]
-    pub allocated_resources: ::std::collections::HashMap<
+    #[prost(btree_map = "string, message", tag = "10")]
+    pub allocated_resources: ::prost::alloc::collections::BTreeMap<
         ::prost::alloc::string::String,
         super::super::super::apimachinery::pkg::api::resource::Quantity,
     >,
@@ -1866,8 +1866,8 @@ pub struct FlexPersistentVolumeSource {
     pub read_only: ::core::option::Option<bool>,
     /// options is Optional: this field holds extra command options if any.
     /// +optional
-    #[prost(map = "string, string", tag = "5")]
-    pub options: ::std::collections::HashMap<
+    #[prost(btree_map = "string, string", tag = "5")]
+    pub options: ::prost::alloc::collections::BTreeMap<
         ::prost::alloc::string::String,
         ::prost::alloc::string::String,
     >,
@@ -1901,8 +1901,8 @@ pub struct FlexVolumeSource {
     pub read_only: ::core::option::Option<bool>,
     /// options is Optional: this field holds extra command options if any.
     /// +optional
-    #[prost(map = "string, string", tag = "5")]
-    pub options: ::std::collections::HashMap<
+    #[prost(btree_map = "string, string", tag = "5")]
+    pub options: ::prost::alloc::collections::BTreeMap<
         ::prost::alloc::string::String,
         ::prost::alloc::string::String,
     >,
@@ -2340,36 +2340,36 @@ pub struct LimitRangeItem {
     pub r#type: ::core::option::Option<::prost::alloc::string::String>,
     /// Max usage constraints on this kind by resource name.
     /// +optional
-    #[prost(map = "string, message", tag = "2")]
-    pub max: ::std::collections::HashMap<
+    #[prost(btree_map = "string, message", tag = "2")]
+    pub max: ::prost::alloc::collections::BTreeMap<
         ::prost::alloc::string::String,
         super::super::super::apimachinery::pkg::api::resource::Quantity,
     >,
     /// Min usage constraints on this kind by resource name.
     /// +optional
-    #[prost(map = "string, message", tag = "3")]
-    pub min: ::std::collections::HashMap<
+    #[prost(btree_map = "string, message", tag = "3")]
+    pub min: ::prost::alloc::collections::BTreeMap<
         ::prost::alloc::string::String,
         super::super::super::apimachinery::pkg::api::resource::Quantity,
     >,
     /// Default resource requirement limit value by resource name if resource limit is omitted.
     /// +optional
-    #[prost(map = "string, message", tag = "4")]
-    pub default: ::std::collections::HashMap<
+    #[prost(btree_map = "string, message", tag = "4")]
+    pub default: ::prost::alloc::collections::BTreeMap<
         ::prost::alloc::string::String,
         super::super::super::apimachinery::pkg::api::resource::Quantity,
     >,
     /// DefaultRequest is the default resource requirement request value by resource name if resource request is omitted.
     /// +optional
-    #[prost(map = "string, message", tag = "5")]
-    pub default_request: ::std::collections::HashMap<
+    #[prost(btree_map = "string, message", tag = "5")]
+    pub default_request: ::prost::alloc::collections::BTreeMap<
         ::prost::alloc::string::String,
         super::super::super::apimachinery::pkg::api::resource::Quantity,
     >,
     /// MaxLimitRequestRatio if specified, the named resource must have a request and limit that are both non-zero where limit divided by request is less than or equal to the enumerated value; this represents the max burst for the named resource.
     /// +optional
-    #[prost(map = "string, message", tag = "6")]
-    pub max_limit_request_ratio: ::std::collections::HashMap<
+    #[prost(btree_map = "string, message", tag = "6")]
+    pub max_limit_request_ratio: ::prost::alloc::collections::BTreeMap<
         ::prost::alloc::string::String,
         super::super::super::apimachinery::pkg::api::resource::Quantity,
     >,
@@ -2810,8 +2810,8 @@ pub struct NodeProxyOptions {
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct NodeResources {
     /// Capacity represents the available resources of a node
-    #[prost(map = "string, message", tag = "1")]
-    pub capacity: ::std::collections::HashMap<
+    #[prost(btree_map = "string, message", tag = "1")]
+    pub capacity: ::prost::alloc::collections::BTreeMap<
         ::prost::alloc::string::String,
         super::super::super::apimachinery::pkg::api::resource::Quantity,
     >,
@@ -2909,16 +2909,16 @@ pub struct NodeStatus {
     /// Capacity represents the total resources of a node.
     /// More info: <https://kubernetes.io/docs/concepts/storage/persistent-volumes#capacity>
     /// +optional
-    #[prost(map = "string, message", tag = "1")]
-    pub capacity: ::std::collections::HashMap<
+    #[prost(btree_map = "string, message", tag = "1")]
+    pub capacity: ::prost::alloc::collections::BTreeMap<
         ::prost::alloc::string::String,
         super::super::super::apimachinery::pkg::api::resource::Quantity,
     >,
     /// Allocatable represents the resources of a node that are available for scheduling.
     /// Defaults to Capacity.
     /// +optional
-    #[prost(map = "string, message", tag = "2")]
-    pub allocatable: ::std::collections::HashMap<
+    #[prost(btree_map = "string, message", tag = "2")]
+    pub allocatable: ::prost::alloc::collections::BTreeMap<
         ::prost::alloc::string::String,
         super::super::super::apimachinery::pkg::api::resource::Quantity,
     >,
@@ -3298,8 +3298,8 @@ pub struct PersistentVolumeClaimStatus {
     pub access_modes: ::prost::alloc::vec::Vec<::prost::alloc::string::String>,
     /// capacity represents the actual resources of the underlying volume.
     /// +optional
-    #[prost(map = "string, message", tag = "3")]
-    pub capacity: ::std::collections::HashMap<
+    #[prost(btree_map = "string, message", tag = "3")]
+    pub capacity: ::prost::alloc::collections::BTreeMap<
         ::prost::alloc::string::String,
         super::super::super::apimachinery::pkg::api::resource::Quantity,
     >,
@@ -3334,8 +3334,8 @@ pub struct PersistentVolumeClaimStatus {
     /// This is an alpha field and requires enabling RecoverVolumeExpansionFailure feature.
     /// +featureGate=RecoverVolumeExpansionFailure
     /// +optional
-    #[prost(map = "string, message", tag = "5")]
-    pub allocated_resources: ::std::collections::HashMap<
+    #[prost(btree_map = "string, message", tag = "5")]
+    pub allocated_resources: ::prost::alloc::collections::BTreeMap<
         ::prost::alloc::string::String,
         super::super::super::apimachinery::pkg::api::resource::Quantity,
     >,
@@ -3377,8 +3377,8 @@ pub struct PersistentVolumeClaimStatus {
     /// +featureGate=RecoverVolumeExpansionFailure
     /// +mapType=granular
     /// +optional
-    #[prost(map = "string, string", tag = "7")]
-    pub allocated_resource_statuses: ::std::collections::HashMap<
+    #[prost(btree_map = "string, string", tag = "7")]
+    pub allocated_resource_statuses: ::prost::alloc::collections::BTreeMap<
         ::prost::alloc::string::String,
         ::prost::alloc::string::String,
     >,
@@ -3571,8 +3571,8 @@ pub struct PersistentVolumeSpec {
     /// capacity is the description of the persistent volume's resources and capacity.
     /// More info: <https://kubernetes.io/docs/concepts/storage/persistent-volumes#capacity>
     /// +optional
-    #[prost(map = "string, message", tag = "1")]
-    pub capacity: ::std::collections::HashMap<
+    #[prost(btree_map = "string, message", tag = "1")]
+    pub capacity: ::prost::alloc::collections::BTreeMap<
         ::prost::alloc::string::String,
         super::super::super::apimachinery::pkg::api::resource::Quantity,
     >,
@@ -4329,8 +4329,8 @@ pub struct PodSpec {
     /// More info: <https://kubernetes.io/docs/concepts/configuration/assign-pod-node/>
     /// +optional
     /// +mapType=atomic
-    #[prost(map = "string, string", tag = "7")]
-    pub node_selector: ::std::collections::HashMap<
+    #[prost(btree_map = "string, string", tag = "7")]
+    pub node_selector: ::prost::alloc::collections::BTreeMap<
         ::prost::alloc::string::String,
         ::prost::alloc::string::String,
     >,
@@ -4484,8 +4484,8 @@ pub struct PodSpec {
     /// defined in the corresponding RuntimeClass, otherwise it will remain unset and treated as zero.
     /// More info: <https://git.k8s.io/enhancements/keps/sig-node/688-pod-overhead/README.md>
     /// +optional
-    #[prost(map = "string, message", tag = "32")]
-    pub overhead: ::std::collections::HashMap<
+    #[prost(btree_map = "string, message", tag = "32")]
+    pub overhead: ::prost::alloc::collections::BTreeMap<
         ::prost::alloc::string::String,
         super::super::super::apimachinery::pkg::api::resource::Quantity,
     >,
@@ -5207,8 +5207,8 @@ pub struct ReplicationControllerSpec {
     /// More info: <https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/#label-selectors>
     /// +optional
     /// +mapType=atomic
-    #[prost(map = "string, string", tag = "2")]
-    pub selector: ::std::collections::HashMap<
+    #[prost(btree_map = "string, string", tag = "2")]
+    pub selector: ::prost::alloc::collections::BTreeMap<
         ::prost::alloc::string::String,
         ::prost::alloc::string::String,
     >,
@@ -5326,8 +5326,8 @@ pub struct ResourceQuotaSpec {
     /// hard is the set of desired hard limits for each named resource.
     /// More info: <https://kubernetes.io/docs/concepts/policy/resource-quotas/>
     /// +optional
-    #[prost(map = "string, message", tag = "1")]
-    pub hard: ::std::collections::HashMap<
+    #[prost(btree_map = "string, message", tag = "1")]
+    pub hard: ::prost::alloc::collections::BTreeMap<
         ::prost::alloc::string::String,
         super::super::super::apimachinery::pkg::api::resource::Quantity,
     >,
@@ -5350,15 +5350,15 @@ pub struct ResourceQuotaStatus {
     /// Hard is the set of enforced hard limits for each named resource.
     /// More info: <https://kubernetes.io/docs/concepts/policy/resource-quotas/>
     /// +optional
-    #[prost(map = "string, message", tag = "1")]
-    pub hard: ::std::collections::HashMap<
+    #[prost(btree_map = "string, message", tag = "1")]
+    pub hard: ::prost::alloc::collections::BTreeMap<
         ::prost::alloc::string::String,
         super::super::super::apimachinery::pkg::api::resource::Quantity,
     >,
     /// Used is the current observed total usage of the resource in the namespace.
     /// +optional
-    #[prost(map = "string, message", tag = "2")]
-    pub used: ::std::collections::HashMap<
+    #[prost(btree_map = "string, message", tag = "2")]
+    pub used: ::prost::alloc::collections::BTreeMap<
         ::prost::alloc::string::String,
         super::super::super::apimachinery::pkg::api::resource::Quantity,
     >,
@@ -5370,8 +5370,8 @@ pub struct ResourceRequirements {
     /// Limits describes the maximum amount of compute resources allowed.
     /// More info: <https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/>
     /// +optional
-    #[prost(map = "string, message", tag = "1")]
-    pub limits: ::std::collections::HashMap<
+    #[prost(btree_map = "string, message", tag = "1")]
+    pub limits: ::prost::alloc::collections::BTreeMap<
         ::prost::alloc::string::String,
         super::super::super::apimachinery::pkg::api::resource::Quantity,
     >,
@@ -5380,8 +5380,8 @@ pub struct ResourceRequirements {
     /// otherwise to an implementation-defined value. Requests cannot exceed Limits.
     /// More info: <https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/>
     /// +optional
-    #[prost(map = "string, message", tag = "2")]
-    pub requests: ::std::collections::HashMap<
+    #[prost(btree_map = "string, message", tag = "2")]
+    pub requests: ::prost::alloc::collections::BTreeMap<
         ::prost::alloc::string::String,
         super::super::super::apimachinery::pkg::api::resource::Quantity,
     >,
@@ -5595,8 +5595,8 @@ pub struct Secret {
     /// base64 encoded string, representing the arbitrary (possibly non-string)
     /// data value here. Described in <https://tools.ietf.org/html/rfc4648#section-4>
     /// +optional
-    #[prost(map = "string, bytes", tag = "2")]
-    pub data: ::std::collections::HashMap<
+    #[prost(btree_map = "string, bytes", tag = "2")]
+    pub data: ::prost::alloc::collections::BTreeMap<
         ::prost::alloc::string::String,
         ::prost::alloc::vec::Vec<u8>,
     >,
@@ -5606,8 +5606,8 @@ pub struct Secret {
     /// The stringData field is never output when reading from the API.
     /// +k8s:conversion-gen=false
     /// +optional
-    #[prost(map = "string, string", tag = "4")]
-    pub string_data: ::std::collections::HashMap<
+    #[prost(btree_map = "string, string", tag = "4")]
+    pub string_data: ::prost::alloc::collections::BTreeMap<
         ::prost::alloc::string::String,
         ::prost::alloc::string::String,
     >,
@@ -6065,8 +6065,8 @@ pub struct ServiceSpec {
     /// More info: <https://kubernetes.io/docs/concepts/services-networking/service/>
     /// +optional
     /// +mapType=atomic
-    #[prost(map = "string, string", tag = "2")]
-    pub selector: ::std::collections::HashMap<
+    #[prost(btree_map = "string, string", tag = "2")]
+    pub selector: ::prost::alloc::collections::BTreeMap<
         ::prost::alloc::string::String,
         ::prost::alloc::string::String,
     >,
@@ -6795,8 +6795,8 @@ pub struct VolumeResourceRequirements {
     /// Limits describes the maximum amount of compute resources allowed.
     /// More info: <https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/>
     /// +optional
-    #[prost(map = "string, message", tag = "1")]
-    pub limits: ::std::collections::HashMap<
+    #[prost(btree_map = "string, message", tag = "1")]
+    pub limits: ::prost::alloc::collections::BTreeMap<
         ::prost::alloc::string::String,
         super::super::super::apimachinery::pkg::api::resource::Quantity,
     >,
@@ -6805,8 +6805,8 @@ pub struct VolumeResourceRequirements {
     /// otherwise to an implementation-defined value. Requests cannot exceed Limits.
     /// More info: <https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/>
     /// +optional
-    #[prost(map = "string, message", tag = "2")]
-    pub requests: ::std::collections::HashMap<
+    #[prost(btree_map = "string, message", tag = "2")]
+    pub requests: ::prost::alloc::collections::BTreeMap<
         ::prost::alloc::string::String,
         super::super::super::apimachinery::pkg::api::resource::Quantity,
     >,

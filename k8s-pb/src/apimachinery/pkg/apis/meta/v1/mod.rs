@@ -427,8 +427,8 @@ pub struct LabelSelector {
     /// map is equivalent to an element of matchExpressions, whose key field is "key", the
     /// operator is "In", and the values array contains only "value". The requirements are ANDed.
     /// +optional
-    #[prost(map = "string, string", tag = "1")]
-    pub match_labels: ::std::collections::HashMap<
+    #[prost(btree_map = "string, string", tag = "1")]
+    pub match_labels: ::prost::alloc::collections::BTreeMap<
         ::prost::alloc::string::String,
         ::prost::alloc::string::String,
     >,
@@ -802,8 +802,8 @@ pub struct ObjectMeta {
     /// and services.
     /// More info: <https://kubernetes.io/docs/concepts/overview/working-with-objects/labels>
     /// +optional
-    #[prost(map = "string, string", tag = "11")]
-    pub labels: ::std::collections::HashMap<
+    #[prost(btree_map = "string, string", tag = "11")]
+    pub labels: ::prost::alloc::collections::BTreeMap<
         ::prost::alloc::string::String,
         ::prost::alloc::string::String,
     >,
@@ -812,8 +812,8 @@ pub struct ObjectMeta {
     /// queryable and should be preserved when modifying objects.
     /// More info: <https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations>
     /// +optional
-    #[prost(map = "string, string", tag = "12")]
-    pub annotations: ::std::collections::HashMap<
+    #[prost(btree_map = "string, string", tag = "12")]
+    pub annotations: ::prost::alloc::collections::BTreeMap<
         ::prost::alloc::string::String,
         ::prost::alloc::string::String,
     >,

@@ -4,8 +4,8 @@
 pub struct Overhead {
     /// podFixed represents the fixed resource overhead associated with running a pod.
     /// +optional
-    #[prost(map = "string, message", tag = "1")]
-    pub pod_fixed: ::std::collections::HashMap<
+    #[prost(btree_map = "string, message", tag = "1")]
+    pub pod_fixed: ::prost::alloc::collections::BTreeMap<
         ::prost::alloc::string::String,
         super::super::super::apimachinery::pkg::api::resource::Quantity,
     >,
@@ -79,8 +79,8 @@ pub struct Scheduling {
     /// be rejected in admission.
     /// +optional
     /// +mapType=atomic
-    #[prost(map = "string, string", tag = "1")]
-    pub node_selector: ::std::collections::HashMap<
+    #[prost(btree_map = "string, string", tag = "1")]
+    pub node_selector: ::prost::alloc::collections::BTreeMap<
         ::prost::alloc::string::String,
         ::prost::alloc::string::String,
     >,

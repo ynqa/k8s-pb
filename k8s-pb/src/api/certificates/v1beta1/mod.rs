@@ -159,8 +159,11 @@ pub struct CertificateSigningRequestSpec {
     /// Extra information about the requesting user.
     /// See user.Info interface for details.
     /// +optional
-    #[prost(map = "string, message", tag = "6")]
-    pub extra: ::std::collections::HashMap<::prost::alloc::string::String, ExtraValue>,
+    #[prost(btree_map = "string, message", tag = "6")]
+    pub extra: ::prost::alloc::collections::BTreeMap<
+        ::prost::alloc::string::String,
+        ExtraValue,
+    >,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
