@@ -34,7 +34,7 @@ fn main() -> Result<()> {
     let descriptor_file = tmp_dir.join("protos.fds");
     prost_build::Config::new()
         // should probably switch to this
-        //.btree_map(&["."])
+        .btree_map(&["."])
         .out_dir(&tmp_dir)
         .file_descriptor_set_path(&descriptor_file)
         .compile_protos(protos.as_slice(), &["protos/"])?;
